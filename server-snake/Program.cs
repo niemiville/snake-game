@@ -1,13 +1,6 @@
-using System;
 using System.Collections.Concurrent;
 using System.Net.WebSockets;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
 
 public class Startup
 {
@@ -96,7 +89,6 @@ public class Position
     public int x { get; set; }
     public int y { get; set; }
 }
-
 
 public class GameState
 {
