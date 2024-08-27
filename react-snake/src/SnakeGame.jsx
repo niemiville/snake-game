@@ -3,7 +3,8 @@ import useWebSocket, { ReadyState } from 'react-use-websocket';
 
 const BOARD_SIZE = 20;
 const SNAKE_INITIAL_POSITION = [{ x: rnd(), y: rnd() }];
-const INITIAL_DIRECTION = { x: rnd2(), y: rnd2() };
+const X = rnd2();
+const INITIAL_DIRECTION = { x: X, y: X === 1 ? 0 : 1};
 
 function rnd(){
     return Math.floor(Math.random() * 20);
@@ -57,7 +58,7 @@ function SnakeGame() {
             newHead.y >= BOARD_SIZE ||
             newSnake.some(segment => segment.x === newHead.x && segment.y === newHead.y)
         ) {
-            alert("Game Over!");
+            //alert("Game Over!");
             setSnake(SNAKE_INITIAL_POSITION);
             setDirection(INITIAL_DIRECTION);
             return;
